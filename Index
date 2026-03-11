@@ -4,203 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watsons Exteriors | Residential Siding & Roofing</title>
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <style>
-        :root { 
-            --brand-red: #d93025; 
-            --brand-yellow: #f9ab00; 
-            --deep-black: #000000;
-        }
+        :root { --brand-red: #d93025; --brand-yellow: #f9ab00; --dark: #000; }
+        body { background: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; color: #222; }
+        
+        /* Centered Header */
+        header { background: var(--dark); padding: 80px 20px; border-bottom: 8px solid var(--brand-yellow); }
+        .red-line { height: 4px; background: var(--brand-red); width: 220px; margin: 15px auto 5px auto; }
+        .yellow-line { height: 2px; background: var(--brand-yellow); width: 130px; margin: 0 auto; }
+        
+        /* Section Styling */
+        section { padding: 80px 20px; }
+        .gallery-img { width: 100%; height: 300px; object-fit: cover; border-bottom: 5px solid var(--brand-red); transition: 0.3s; }
+        .gallery-img:hover { transform: scale(1.02); border-color: var(--brand-yellow); }
 
-        body { 
-            background-color: #ffffff; 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        .navbar { background-color: var(--deep-black); border-bottom: 1px solid #222; }
-        .nav-link { color: #fff !important; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; font-size: 0.9rem; }
-        .nav-link:hover { color: var(--brand-yellow) !important; }
-
-        /* Header / Hero Section */
-        header { 
-            background-color: var(--deep-black); 
-            padding: 80px 20px; 
-            border-bottom: 8px solid var(--brand-yellow); 
-            text-align: center;
-        }
-        .logo-main { max-height: 250px; width: auto; margin-bottom: 30px; }
-        .red-accent { height: 4px; background: var(--brand-red); width: 250px; margin: 15px auto 5px auto; }
-        .yellow-accent { height: 2px; background: var(--brand-yellow); width: 140px; margin: 0 auto; }
-        .location-tags { color: #888; letter-spacing: 3px; font-size: 0.75rem; margin-top: 25px; }
-
-        /* General Section Centering */
-        section { padding: 90px 0; text-align: center; }
-
-        /* Residential Gallery */
-        .gallery-container { background-color: #fcfcfc; }
-        .gallery-img { 
-            width: 100%; 
-            height: 350px; 
-            object-fit: cover; 
-            border-bottom: 6px solid var(--brand-red); 
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .gallery-img:hover { transform: translateY(-5px); border-color: var(--brand-yellow); }
-
-        /* Quote Form Styling */
-        .form-card { 
-            max-width: 700px; 
-            margin: 0 auto; 
-            padding: 40px; 
-            background: #fff; 
-            border: 1px solid #eee;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        .form-control, .form-select { 
-            border-radius: 0; 
-            border: 2px solid #000; 
-            padding: 12px;
-            margin-bottom: 20px;
-        }
-        .btn-submit { 
-            background-color: var(--brand-red); 
-            color: white; 
-            border: none; 
-            border-radius: 0; 
-            padding: 15px 50px; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            width: 100%;
-            letter-spacing: 2px;
-        }
-        .btn-submit:hover { background-color: #b1251c; color: #fff; }
-
-        /* Footer & IP Notice */
-        footer { 
-            background-color: var(--deep-black); 
-            color: white; 
-            padding: 70px 20px 20px 20px; 
-            border-top: 10px solid var(--brand-red); 
-            text-align: center;
-        }
-        .footer-logo { max-height: 80px; opacity: 0.8; margin-bottom: 20px; }
-        .ip-disclaimer { 
-            margin-top: 50px; 
-            padding-top: 20px; 
-            border-top: 1px solid #222; 
-            font-size: 0.65rem; 
-            color: #444; 
-            max-width: 800px; 
-            margin-left: auto; 
-            margin-right: auto;
-        }
+        /* Calculator & Form Card */
+        .app-card { max-width: 600px; margin: 0 auto; padding: 40px; border: 2px solid #000; background: #fcfcfc; text-align: left; }
+        .form-control, .form-select { border-radius: 0; border: 1px solid #000; padding: 12px; margin-bottom: 15px; }
+        .btn-submit { background: var(--brand-red); color: #fff; border: none; width: 100%; padding: 15px; font-weight: bold; text-transform: uppercase; cursor: pointer; }
+        
+        /* Footer IP Notice */
+        footer { background: var(--dark); color: #fff; padding: 60px 20px 20px; border-top: 8px solid var(--brand-red); margin-top: 50px; }
+        .ip-disclaimer { font-size: 10px; color: #444; border-top: 1px solid #222; margin-top: 40px; padding-top: 20px; line-height: 1.5; text-align: center; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand navbar-dark sticky-top">
-    <div class="container justify-content-center">
-        <ul class="navbar-nav gap-4">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link" href="#quote">Quote</a></li>
-        </ul>
-    </div>
-</nav>
-
-<header id="home">
-    <div class="container">
-        <img src="logo.png" alt="Watsons Exteriors" class="logo-main">
-        <h1 class="text-white fw-bold display-5 text-uppercase" style="letter-spacing: 2px;">Watsons Exteriors</h1>
-        <div class="red-accent"></div>
-        <div class="yellow-accent"></div>
-        <p class="location-tags text-uppercase">Kingston • Bath • Smith Falls • Mt Elgin</p>
-    </div>
+<header>
+    <h1 style="color:white; letter-spacing:2px; text-transform:uppercase; font-weight:bold;">Watsons Exteriors</h1>
+    <div class="red-line"></div>
+    <div class="yellow-line"></div>
+    <p style="color:#666; font-size:12px; margin-top:15px; letter-spacing:3px;">KINGSTON • BATH • SMITH FALLS • MT ELGIN</p>
 </header>
 
-<section id="services" class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <h2 class="fw-bold text-uppercase mb-4">Residential Vinyl Siding & Roof Repair</h2>
-            <p class="lead text-muted">All Things Exteriors. Professional finishing for residential properties. No project too large.</p>
+<section id="services">
+    <div class="container">
+        <h2 class="fw-bold text-uppercase">Residential Vinyl Siding & Roofing</h2>
+        <p class="text-muted lead">Professional finishing. No project too large.</p>
+        
+        <div class="row g-4 mt-4">
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1631675571454-51369f6874ba?w=500" class="gallery-img" alt="Siding"></div>
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?w=500" class="gallery-img" alt="Roofing"></div>
+            <div class="col-md-4"><img src="https://images.unsplash.com/photo-1635108199650-8115b597e283?w=500" class="gallery-img" alt="Finish"></div>
         </div>
     </div>
 </section>
 
-<section id="gallery" class="gallery-container">
+<section id="app" class="bg-light">
     <div class="container">
-        <h2 class="fw-bold mb-5 text-uppercase">Project Showcase</h2>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4"><img src="gallery1.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery2.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery3.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery4.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery5.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery6.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery7.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery8.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery9.jpg" class="gallery-img" alt="Residential Work"></div>
-            <div class="col-md-6 col-lg-4"><img src="gallery10.jpg" class="gallery-img" alt="Residential Work"></div>
-        </div>
-    </div>
-</section>
-
-<section id="quote">
-    <div class="container">
-        <div class="form-card">
-            <h2 class="fw-bold text-uppercase mb-4">Request a Quote</h2>
-            <form action="#" method="POST" class="text-start">
-                <label class="small fw-bold text-uppercase">Full Name</label>
-                <input type="text" name="name" class="form-control" required>
+        <h2 class="fw-bold text-uppercase mb-5">Material Estimator & Quote</h2>
+        <div class="app-card">
+            <form action="https://formspree.io/f/your-id" method="POST" id="quoteForm">
                 
-                <label class="small fw-bold text-uppercase">Phone Number</label>
-                <input type="tel" name="phone" class="form-control" required>
+                <label class="small fw-bold">CLIENT NAME</label>
+                <input type="text" name="name" id="userName" class="form-control" placeholder="Full Name" required>
                 
-                <label class="small fw-bold text-uppercase">Service Type</label>
-                <select name="service" class="form-select" required>
-                    <option value="Siding">Vinyl Siding</option>
-                    <option value="Roofing">Roof Repair</option>
-                    <option value="Other">Other Residential Finishing</option>
+                <label class="small fw-bold">PROJECT AREA (SQ FT)</label>
+                <input type="number" name="area" id="userArea" class="form-control" placeholder="e.g. 1500" required>
+                
+                <label class="small fw-bold">MATERIAL TYPE</label>
+                <select name="material" id="userMaterial" class="form-select" required>
+                    <option value="siding">Vinyl Siding (Panels)</option>
+                    <option value="shingles">Roof Shingles (Bundles)</option>
+                    <option value="plywood">Plywood (4x8 Sheets)</option>
                 </select>
-                
-                <label class="small fw-bold text-uppercase">Project Description</label>
-                <textarea name="message" class="form-control" rows="5" required></textarea>
-                
-                <button type="submit" class="btn-submit">Submit Quote Request</button>
+
+                <input type="hidden" name="calculated_estimate" id="hiddenResult">
+
+                <div id="displayResult" class="my-3 fw-bold text-danger text-center" style="display:none; font-size: 1.2rem;"></div>
+
+                <button type="button" onclick="calculateAndPrepare()" class="btn-submit mb-2">1. Calculate Estimate</button>
+                <button type="submit" id="submitBtn" class="btn-submit" style="background:#444; display:none;">2. Send Quote to Randy</button>
             </form>
         </div>
     </div>
 </section>
 
 <footer>
-    <div class="container">
-        <img src="logo.png" alt="Watsons Exteriors" class="footer-logo">
-        <h4 class="fw-bold text-uppercase">Watsons Exteriors</h4>
-        <p class="small text-secondary mb-4">Licensed & Insured Exterior Specialists</p>
-        
-        <div class="row justify-content-center g-3 small text-white-50">
-            <div class="col-auto">Phone: xxx-xxx-xxx</div>
-            <div class="col-auto">Email: [Placeholder]</div>
-        </div>
-
-        <div class="ip-disclaimer">
-            <p class="mb-1">&copy; 2026 Watsons Exteriors. All Rights Reserved.</p>
-            <p class="mb-0">
-                This website was developed by <strong>McKoder</strong>. 
-                All source code, design architecture, and digital assets remain the exclusive intellectual property of 
-                <strong>Dakota McLain / McKoder</strong>. Unauthorized duplication is prohibited.
-            </p>
-        </div>
+    <h4 class="fw-bold">WATSONS EXTERIORS</h4>
+    <p class="small text-muted mb-0">Residential Finishing Specialists</p>
+    
+    <div class="ip-disclaimer">
+        &copy; 2026 Watsons Exteriors. This digital asset and its internal logic are developed by and are the exclusive intellectual property of <strong>McKoder (Dakota McLain)</strong>. All hosting and source code rights are reserved by Dakota McLain.
     </div>
 </footer>
 
+<script>
+    function calculateAndPrepare() {
+        const area = parseFloat(document.getElementById('userArea').value);
+        const material = document.getElementById('userMaterial').value;
+        const display = document.getElementById('displayResult');
+        const hidden = document.getElementById('hiddenResult');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (!area) { alert("Please enter the total area."); return; }
+
+        let count = 0;
+        let unit = "";
+
+        if (material === "shingles") {
+            count = Math.ceil(area / 33.3);
+            unit = "Bundles";
+        } else if (material === "siding") {
+            count = Math.ceil(area / 32); // Standard 4x8 panel coverage
+            unit = "Panels";
+        } else {
+            count = Math.ceil(area / 32);
+            unit = "Sheets";
+        }
+
+        const finalString = `${count} ${unit}`;
+        display.innerHTML = `ESTIMATE: ${finalString}`;
+        display.style.display = "block";
+        hidden.value = finalString; // This puts the math into the email
+        submitBtn.style.display = "block"; // Reveals the send button
+    }
+</script>
+
 </body>
 </html>
-
-    
